@@ -44,6 +44,14 @@ ul, li{
     text-decoration: none;
 }
 
+.mobile-logo-valeia{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0B1B23;
+    text-decoration: none;
+    width: 15vh;
+}
+
 
 .mobile-header {
     position: absolute;

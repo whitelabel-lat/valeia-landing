@@ -2030,20 +2030,20 @@ img {
   transition: all 200ms linear;
 }
 
-.progress-wrap.active-progress {
+/* .progress-wrap.active-progress {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
+} */
 
-.progress-wrap::after {
+/* .progress-wrap::after {
   position: absolute;
   font-family: "FontAwesome";
   content: "\f062";
   text-align: center;
   line-height: 56px;
   font-size: 18px;
-  color: #433CE7;
+  color: #3f3ce7;
   left: 0;
   top: 0;
   height: 56px;
@@ -2052,13 +2052,13 @@ img {
   display: block;
   z-index: 1;
   transition: all 200ms linear;
-}
+} */
 
-.progress-wrap:hover::after {
+/* .progress-wrap:hover::after {
   opacity: 0;
-}
+} */
 
-.progress-wrap::before {
+/* .progress-wrap::before {
   position: absolute;
   font-family: "FontAwesome";
   content: "\f062";
@@ -2074,17 +2074,17 @@ img {
   display: block;
   z-index: 2;
   transition: all 200ms linear;
-}
+} */
 
-.progress-wrap:hover::before {
+/* .progress-wrap:hover::before {
   opacity: 1;
-}
+} */
 
-.progress-wrap svg path {
+/* .progress-wrap svg path {
   fill: none;
-}
+} */
 
-.progress-wrap svg.progress-circle path {
+/* .progress-wrap svg.progress-circle path {
   stroke: #433CE7;
   stroke-width: 4;
   box-sizing: border-box;
@@ -2095,7 +2095,7 @@ img {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
+} */
 
 /*============= PRELOADER CSS AREA ENDS===============*/
 /*============= BUTTON CSS AREA ===============*/
