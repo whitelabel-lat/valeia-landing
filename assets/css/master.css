@@ -100,6 +100,10 @@ img {
   padding: 80px 0 80px;
 }
 
+.sp9{
+  padding: 100px 0 0px;
+}
+
 .space10 {
   height: 10px;
 }
@@ -1496,11 +1500,17 @@ img {
   }
 }
 .welcome2-section-area .header-images-area {
-  position: relative;
+    position: relative;
 }
 @media (max-width: 767px) {
   .welcome2-section-area .header-images-area {
     margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 539px) {
+  .welcome2-section-area .header-images-area {
+    margin-top: 0px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1509,10 +1519,101 @@ img {
   }
 }
 .welcome2-section-area .header-images-area .header-elements1 {
-  position: absolute;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
+
+/* Extra large screens (1440px and above) */
+@media only screen and (min-width: 1440px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(0px, -62px) scale(1.5);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1401px) and (max-width: 1439px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(-42px, -34px) scale(1.4);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(-41px, 7px) scale(1.4);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Large screens (1024px to 1440px) */
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(27px, 58px) scale(1.5);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Medium screens (768px to 1024px) */
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(-35px, 97px) scale(1.3);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Medium screens (768px to 1024px) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(-35px, 0px) scale(1);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Small screens (540px to 768px) */
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(0px, -11px) scale(1.3);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 461px) and (max-width: 539px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(8px, 48px) scale(1.1);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 460px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(8px, 49px) scale(1.1);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 420px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(8px, 50px) scale(1.1);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Extra small screens (360px to 540px) */
+@media only screen and (min-width: 360px) and (max-width: 410px) {
+  .welcome2-section-area .header-images-area .header-elements1 {
+    transform: translate(8px, 52px) scale(1.1);
     height: 100%;
     width: 100%;
   }
@@ -1524,8 +1625,6 @@ img {
      object-fit: contain;
 }
 .welcome2-section-area .header-images-area .header-elements2 {
-  height: 100%;
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
@@ -4538,6 +4637,12 @@ a.header-btn9 i {
   color: #676879;
   line-height: 26px;
 }
+
+/* ========== VIDEO CSS ================= */
+.position-video{
+  text-align: center;
+}
+
 
 /*============= SERVICE CSS AREA ENDS ===============*/
 /*============= FEATURES CSS AREA ===============*/
