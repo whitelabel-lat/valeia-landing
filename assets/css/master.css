@@ -11819,3 +11819,142 @@ a.header-btn9 i {
 }
 
 /*============= RTL CSS AREA ENDS ===============*//*# sourceMappingURL=master.css.map */
+
+#container {
+  padding: 2em 5%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: poppins, sans-serif;
+}
+
+#planContainer {
+  display: flex;
+  background-color: #000;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#planContainer button {
+  flex: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  background-color: #000;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#planCaracteristicas {
+  columns: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#planCaracteristicas li {
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+}
+
+#planContainer button.active {
+  background-color: #4a3acf;
+  color: white;
+}
+
+#planDetails {
+  text-align: left;
+}
+
+#planDetails ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.call-button {
+  font-family: Poppins, sans-serif;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+#buyNowLink .call-button:hover {
+  background-color: #4a3acf;
+  color: white;
+}
+
+.call-link {
+  font-family: Poppins, sans-serif;
+  color: black;
+  padding: 10px 20px;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.call-link:hover {
+  color: #4a3acf;
+}
+
+.divider {
+  height: 2px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+@media (max-width: 479px) {
+  #actionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .call-button, .call-link {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 480px) {
+  #planContainer button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+
+  #planCaracteristicas {
+    columns: 2;
+  }
+
+  .call-button, .call-link {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  #container {
+    padding: 2em 3.5em;
+  }
+}

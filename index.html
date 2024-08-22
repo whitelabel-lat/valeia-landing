@@ -614,6 +614,33 @@
     <div class="space100 d-lg-block d-none"></div>
   </div>
 </div>
+<div id="container">
+  <h2 style="text-align: left;">Suscripción Mensual</h2>
+  <div id="planContainer">
+    <button class="plan-button active" data-plan="planBasico">Estandar</button>
+    <button class="plan-button" data-plan="planPremium">Pro</button>
+    <button class="plan-button" data-plan="planAdvance">Advance</button>
+    
+  </div>
+  <div id="planDetails">
+    <p id="planPrecio" style="font-weight: bold; font-size: 2em;">50 USD</p>
+    <p id="planNombre">Empieza con potencia: ideal para escalar tus conversaciones y resultados. Pausa o cancela en cualquier momento.</p>
+    <div class="divider"></div>
+    <p>Lo qué incluye</p>
+    <ul id="planCaracteristicas">
+      <li>• 160 conversaciones</li>
+      <li>• Precio fijo por conversacion adicional | 31 centavos</li>
+      <li>• Construccion Prompt IA</li>
+      <li>• Construcción perfil cliente ideal</li>
+    </ul>
+    <div id="actionContainer">
+      <a id="buyNowLink" href="https://checkout.dlocalgo.com/validate/subscription/ykZw9zTBmyXooroIKNKIOfcc9Cono9WK" target="_blank">
+        <button id="callButton" class="call-button">Comprar ahora</button>
+      </a>
+      <a id="calendlyLink" href="https://calendly.com/hola-whitelabel/30min" target="_blank" class="call-link">Agenda una llamada</a>
+    </div>
+  </div>
+</div>
 <!--===== Testimonios  =======-->
 <div class="testimonial1-section-area sp3">
   <div class="container">
@@ -920,6 +947,91 @@
 <!--===== FOOTER ENDS =======-->
 
   <!--=====JS=======-->
+  <script>
+    const planes = {
+      planBasico: {
+        nombre: 'Empieza con potencia: ideal para escalar tus conversaciones y resultados. Pausa o cancela en cualquier momento.',
+        precio: '50 USD',
+        caracteristicas: [
+          '• 160 conversaciones',
+          '• Precio fijo por conversacion adicional | 31 centavos',
+          '• Construccion Prompt IA',
+          '• Construcción perfil cliente ideal',
+        ],
+        buyNowLink: 'https://checkout.dlocalgo.com/validate/subscription/ykZw9zTBmyXooroIKNKIOfcc9Cono9WK'
+      },
+      planPremium: {
+        nombre: 'Optimiza tu eficacia: más conversaciones, mayor conversión. Pausa o cancela en cualquier momento',
+        precio: '100 USD',
+        caracteristicas: [
+          '• 400 conversaciones.',
+          '• Precio fijo por conversacion adicional | 25 centavos.',
+          '• Construccion Prompt IA.',
+          '• Construcción perfil cliente ideal.',
+        ],
+        buyNowLink: 'https://checkout.dlocalgo.com/validate/subscription/tdJ3Cykbhne0laUJfueNA4fcw5wJBazd'
+      },
+       planAdvance: {
+        nombre: 'Maximiza tu alcance: ideal para liderar a gran escala. Pausa o cancela en cualquier momento',
+        precio: '250 USD',
+        caracteristicas: [
+          '• 1300 conversaciones.',
+          '• Precio fijo por conversacion adicional | 19 centavos.',
+          '• Construccion Prompt IA.',
+          '• Construcción perfil cliente ideal.',
+        ],
+        buyNowLink: 'https://checkout.dlocalgo.com/validate/subscription/lwyCQwZIVk5QoiUJxCXF39ds8NLVwaFw'
+      },
+    };
+
+    const planButtons = document.querySelectorAll('.plan-button');
+    const planNombre = document.getElementById('planNombre');
+    const planPrecio = document.getElementById('planPrecio');
+    const planCaracteristicas = document.getElementById('planCaracteristicas');
+    const buyNowLink = document.getElementById('buyNowLink');
+    const callButton = document.getElementById('callButton');
+    const calendlyLink = document.getElementById('calendlyLink');
+
+    function updatePlanDetails(plan) {
+      const planData = planes[plan];
+      planNombre.textContent = planData.nombre;
+      planPrecio.textContent = planData.precio;
+      planCaracteristicas.innerHTML = planData.caracteristicas.map(item => `<li>${item}</li>`).join('');
+
+      if (plan === 'planEnterprise') {
+        buyNowLink.href = planData.calendlyLink;
+        buyNowLink.style.display = 'inline-block';
+        callButton.textContent = 'Agendar llamada';
+        calendlyLink.style.display = 'none';
+      } else {
+        buyNowLink.href = planData.buyNowLink;
+        buyNowLink.style.display = 'inline-block';
+        callButton.textContent = 'Comprar ahora';
+        calendlyLink.style.display = 'inline-block';
+      }
+
+      planButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.backgroundColor = '#000';
+        btn.style.color = 'white';
+      });
+
+      const activeButton = document.querySelector(`[data-plan="${plan}"]`);
+      activeButton.classList.add('active');
+      activeButton.style.backgroundColor = '#4a3acf';
+      activeButton.style.color = 'white';
+    }
+
+    planButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const plan = button.dataset.plan;
+        updatePlanDetails(plan);
+      });
+    });
+
+    // Inicializar con el plan Estándar seleccionado
+    updatePlanDetails('planBasico');
+  </script>
   <script type="module" src="./assets/js/plugins/chat-widget.es.js"></script>
   <script src="assets/js/plugins/bootstrap.min.js"></script>
   <script src="assets/js/plugins/swiper.bundle.js"></script>
