@@ -9,13 +9,13 @@ class h {
     e(this, "iframe");
     e(this, "button");
     e(this, "floatingText");
-    e(this, "openImgSrc", "https://cdn-icons-png.flaticon.com/512/13888/13888994.png");
+    e(this, "openImgSrc", "https://valeia.vercel.app/valeia_avatar_2_copia.png");
     // Imagen para el estado cerrado
     e(this, "closeImgSrc", "https://cdn-icons-png.flaticon.com/512/8695/8695043.png");
     this.container = document.createElement("div"), this.iframe = document.createElement("iframe"), this.button = document.createElement("button"), this.floatingText = document.createElement("div"), this.initializeElements(), this.attachEventListeners(), this.initializeStyles(), this.render();
   }
   initializeStyles() {
-    this.iframe.style.width = "400px", this.iframe.style.height = "600px", this.iframe.style.right = "30px", this.iframe.style.bottom = "100px", this.floatingText.innerText = "¡Hola! ¿como puedo ayudarte?", this.floatingText.style.position = "absolute", this.floatingText.style.width = "300px", this.floatingText.style.textAlign = "center", this.floatingText.style.top = "10px", this.floatingText.style.right = "80px", this.floatingText.style.backgroundColor = "rgba(110,36,255, 0.8)", this.floatingText.style.color = "white", this.floatingText.style.padding = "5px", this.floatingText.style.borderRadius = "5px", this.floatingText.style.animation = "wave 2s ease-in-out infinite", this.floatingText.style.display = "inline-block";
+    this.iframe.style.width = "400px", this.iframe.style.height = "600px", this.iframe.style.right = "30px", this.iframe.style.bottom = "100px", this.floatingText.innerText = "¡Hola! ¿como puedo ayudarte?", this.floatingText.style.position = "absolute", this.floatingText.style.width = "300px", this.floatingText.style.textAlign = "center", this.floatingText.style.top = "10px", this.floatingText.style.right = "80px", this.floatingText.style.backgroundColor = "#3dc2eb", this.floatingText.style.color = "white", this.floatingText.style.padding = "5px", this.floatingText.style.borderRadius = "5px", this.floatingText.style.animation = "wave 2s ease-in-out infinite", this.floatingText.style.display = "inline-block";
     const t = document.styleSheets[0];
     t.insertRule(`
             @keyframes wave {
@@ -49,6 +49,7 @@ class h {
             width: 0;
             height: 0;
             opacity: 0;
+            display: none;
             transition: all 0.3s ease-in-out;
             overflow: hidden;
         `, this.button.style.cssText = `
@@ -57,8 +58,6 @@ class h {
             align-items: center;
             height: 55px;
             width: 55px;
-            // border-radius: 50%;
-            // background-color: #25D366;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: none;
             cursor: pointer;
@@ -78,8 +77,8 @@ class h {
   }
   updateIframeVisibility() {
     this.isOpen ? (this.updateIframeSize(), setTimeout(() => {
-      this.iframe.style.opacity = "1";
-    }, 50)) : (this.iframe.style.opacity = "0", setTimeout(() => {
+      this.iframe.style.opacity = "1", this.iframe.style.display = "block";
+    }, 50)) : (this.iframe.style.opacity = "0", this.iframe.style.display = "none", setTimeout(() => {
       this.iframe.style.width = "0", this.iframe.style.height = "0";
     }, 300));
   }
