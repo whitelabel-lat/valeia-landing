@@ -39,7 +39,7 @@ class h {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-        `, this.iframe.src = "https://valeia.vercel.app/chat", this.iframe.style.cssText = `
+        `, this.iframe.src = "https://chat-ui-prod.vercel.app/chat", this.iframe.style.cssText = `
             position: fixed;
             bottom: 100px;
             right: 30px;
