@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Embedded Signup</title>
+    <!-- SDK Loading -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Título de la página -->
+    <h1 style="text-align: center; font-family: Arial, sans-serif;">
+      WhatsApp Embedded Signup
+    </h1>
+
+    <!-- Botón para lanzar el flujo -->
+    <div style="text-align: center; margin-top: 50px;">
+      <button
+        id="launchButton"
+        style="
+          background-color: #1877f2;
+          border: none;
+          color: #fff;
+          padding: 12px 24px;
+          font-size: 16px;
+          font-family: Arial, sans-serif;
+          border-radius: 4px;
+          cursor: pointer;
+        "
+      >
+        Launch WhatsApp Signup
+      </button>
+    </div>
+
+    <!-- Script para manejar el flujo -->
+    <script>
+      // Carga e inicialización del SDK de Facebook
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "516359088080867", // Reemplaza con tu App ID
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v21.0", // Reemplaza con la versión del Graph API
+        });
+      };
+
+      // Listener para recibir mensajes de Facebook
+      window.addEventListener("message", (event) => {
+        if (
+          event.origin !== "https://www.facebook.com" &&
+          event.origin !== "https://web.facebook.com"
+        )
+          return;
+
+        try {
+          const data = JSON.parse(event.data);
+          if (data.type === "WA_EMBEDDED_SIGNUP") {
+            console.log("Mensaje recibido:", data);
+            alert("Onboarding completado correctamente.");
+          }
+        } catch {
+          console.log("Mensaje recibido sin formato JSON:", event.data);
+        }
+      });
+
+      // Función para lanzar el flujo de WhatsApp Embedded Signup
+      const launchWhatsAppSignup = () => {
+        FB.login(
+          (response) => {
+            if (response.authResponse) {
+              console.log("Login exitoso:", response.authResponse);
+            } else {
+              console.log("Login cancelado o fallido:", response);
+            }
+          },
+          {
+            config_id: "2266726483726993", // Reemplaza con tu Configuration ID
+            response_type: "code",
+            override_default_response_type: true,
+            extras: {
+              setup: {},
+              featureType: "",
+              sessionInfoVersion: "3",
+            },
+          }
+        );
+      };
+
+      // Asignar el evento click al botón
+      document
+        .getElementById("launchButton")
+        .addEventListener("click", launchWhatsAppSignup);
+    </script>
+  </body>
+</html>
